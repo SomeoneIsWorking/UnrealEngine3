@@ -2,6 +2,22 @@
 
 A list of useful references that people may need.
 
+## Build and platform scope
+
+This checkout is a reference/source snapshot of the UE3 10897 tree, not a
+standalone modern game or engine build. Its primary solution files delegate
+compilation to the historical UnrealBuildTool and the checked-in Android
+projects use the retired Ant/ADT toolchain. The repository does not provide a
+reproducible, asset-free build entry point for a hosted runner.
+
+Consequently it has no CI workflow at present. Linux and macOS have no complete
+engine build target here; Windows requires the historical UBT/Visual Studio
+environment; and Android requires the retired SDK/NDK/Ant chain plus a title
+consumer. A workflow that only greps this source tree or repeats a policy check
+would not verify UE3. The maintained `x360ue3` consumer owns native platform CI
+once it has a real, pinned build boundary; this repository remains its source
+reference.
+
 ## Variables
 - GNames
   - [UnrealEngine3/Development/Src/Core/Inc/UnName.h#L572](https://github.com/CodeRedModding/UnrealEngine3/blob/main/Development/Src/Core/Inc/UnName.h#L572)
